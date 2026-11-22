@@ -1,0 +1,7 @@
+{
+  "appId": "cl.apsmaster.app",
+  "appName": "APS-Master CL",
+  "webDir": "www",
+  "server": { "androidScheme": "https" },
+  "android": { "allowMixedContent": false, "backgroundColor": "#f1f5f9" }
+}
