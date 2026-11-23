@@ -1,16 +1,31 @@
 {
-  "name": "APS-Master CL — Copiloto de Enfermería en CESFAM",
-  "short_name": "APS-Master",
-  "description": "Copiloto de enfermería para controles en APS Chile. Funciona sin internet.",
-  "start_url": "./",
+  "name": "APS Master",
+  "short_name": "APS Master",
+  "description": "Herramienta clínica offline para Atención Primaria de Salud",
+  "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#f1f5f9",
+  "orientation": "any",
+  "background_color": "#0d9488",
   "theme_color": "#0d9488",
-  "lang": "es-CL",
   "icons": [
-    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
-    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
-    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
   ]
 }
