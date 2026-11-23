@@ -1,26 +1,16 @@
 (function () {
-  var ua = navigator.userAgent || '';
-  var isElectron = /Electron\//.test(ua);
-  var isCapacitor = !!(window.Capacitor &&
-    typeof window.Capacitor.isNativePlatform === 'function' &&
-    window.Capacitor.isNativePlatform());
-  var isHttp = location.protocol === 'http:' || location.protocol === 'https:';
-  var plat = isElectron ? 'electron' : isCapacitor ? 'capacitor' : 'web';
+  const isElectron = navigator.userAgent.toLowerCase().includes('electron');
+  const isCapacitor = Boolean(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform());
 
-  window.APS_PLATFORM = plat;
-  document.documentElement.setAttribute('data-platform', plat);
+  window.APS_PLATFORM = {
+    isElectron,
+    isCapacitor,
+    isWeb: !isElectron && !isCapacitor
+  };
 
-  if (plat === 'web' && isHttp && 'serviceWorker' in navigator) {
-    // PWA en navegador (HTTPS o localhost)
-    window.addEventListener('load', function () {
-      navigator.serviceWorker.register('./sw.js').catch(function () {});
+  if ('serviceWorker' in navigator && !isElectron && (location.protocol === 'https:' || location.hostname === 'localhost')) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js').catch(() => {});
     });
-  } else if ('serviceWorker' in navigator) {
-    // Electron, Capacitor o file://: no se usa service worker; limpia restos
-    try {
-      navigator.serviceWorker.getRegistrations()
-        .then(function (r) { r.forEach(function (x) { x.unregister(); }); })
-        .catch(function () {});
-    } catch (e) {}
   }
 })();
