@@ -1,6 +1,5 @@
 {
   "appId": "cl.apsmaster.app",
   "appName": "APS Master",
-  "webDir": "www",
-  "bundledWebRuntime": false
+  "webDir": "www"
 }
