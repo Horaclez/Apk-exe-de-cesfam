@@ -49,7 +49,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: android-apk
-          path: APS Master.apk
+          path: APS-Master.apk
 
   release:
     needs: [windows, android]
