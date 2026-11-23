@@ -6,7 +6,7 @@ if (!app.requestSingleInstanceLock()) app.quit();
 function crear() {
   const w = new BrowserWindow({
     width: 1280, height: 860, minWidth: 380, minHeight: 600,
-    title: 'APS-Master CL',
+    title: 'APS Master',
     icon: path.join(__dirname, '..', 'build', 'icon.png'),
     autoHideMenuBar: true,
     webPreferences: { contextIsolation: true, nodeIntegration: false, sandbox: true, spellcheck: false }
