@@ -31,7 +31,7 @@
     "win": {
       "target": "portable",
       "icon": "build/icon.png",
-      "artifactName": "APS Master.${ext}"
+      "artifactName": "APS-Master.${ext}"
     }
   }
 }
